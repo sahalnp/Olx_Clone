@@ -11,7 +11,7 @@ export const Header = () => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        const result = logOut(); 
+        const result = logOut();
         alert(result.message);
         setUser(null);
         navigate("/login");
@@ -69,27 +69,28 @@ export const Header = () => {
 
                         {/* Right Menu */}
                         <div className="flex items-center space-x-4">
-                            <button className="flex items-center text-gray-700 hover:text-gray-900">
-                                <Heart className="h-5 w-5 mr-1" />
-                                Favourites
-                            </button>
+                
 
                             {user ? (
-    <div className="flex items-center text-gray-700">
-        <User className="h-5 w-5 mr-1" />
-        <span className="font-medium">{user.name}</span>
-    </div>
-) : (
-    <button
-        onClick={() => navigate("/login")}
-        className="flex items-center text-gray-700 hover:text-gray-900"
-    >
-        <User className="h-5 w-5 mr-1" />
-        Login
-    </button>
-)}
+                                <div className="flex items-center text-gray-700">
+                                    <User className="h-5 w-5 mr-1" />
+                                    <span onClick={()=>{
+                                        navigate('/profile')
+                                    }} className="font-medium">
+                                        {user.name}
+                                    </span>
+                                </div>
+                            ) : (
+                                <button
+                                    onClick={() => navigate("/login")}
+                                    className="flex items-center text-gray-700 hover:text-gray-900"
+                                >
+                                    <User className="h-5 w-5 mr-1" />
+                                    Login
+                                </button>
+                            )}
 
-                            <button className="flex items-center bg-yellow-400 text-black px-4 py-2 rounded-md hover:bg-yellow-500 font-semibold">
+                            <button  onClick={() => navigate("/sell")} className="flex items-center bg-yellow-400 text-black px-4 py-2 rounded-md hover:bg-yellow-500 font-semibold">
                                 <Plus className="h-5 w-5 mr-1" />
                                 SELL
                             </button>

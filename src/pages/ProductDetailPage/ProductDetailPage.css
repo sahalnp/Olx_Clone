@@ -1,0 +1,24 @@
+/* ProductDetailPage.css */
+
+.image-slider {
+    position: relative;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 1.25rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.slider-button:hover {
+    background-color: #f3f4f6; /* Tailwind gray-100 */
+}

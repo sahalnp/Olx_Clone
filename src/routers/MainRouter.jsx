@@ -3,10 +3,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Login } from "../pages/login";
 import { Signup } from "../pages/signup";
 import OLXHomepage from "../pages/home";
-import ProductDetailPage from "../pages/ProductPage";
+import ProductDetailPage from "../pages/ProductDetailPage";
 import SellPage from "../pages/sell";
 import PrivateRouter from "./PrivateRouter";
 import PublicRouter from "./PublicRouter";
+import ViewAll from "../pages/ViewAll";
+import UserProfile from "../pages/Profile";
 
 const router = createBrowserRouter([
     {
@@ -38,10 +40,26 @@ const router = createBrowserRouter([
         ),
     },
     {
-        path: "/product",
+        path: "/product/:id",
         element: (
             <PrivateRouter>
                 <ProductDetailPage />
+            </PrivateRouter>
+        ),
+    },
+    {
+        path: "/viewAll",
+        element: (
+            <PrivateRouter>
+                <ViewAll />
+            </PrivateRouter>
+        ),
+    },
+    {
+        path: "/profile",
+        element: (
+            <PrivateRouter>
+                <UserProfile />
             </PrivateRouter>
         ),
     },
